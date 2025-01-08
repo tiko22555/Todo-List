@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <a href="{%url 'home' %}"class="button"> Home</a>
+    <h1>CREATE TASK</h1>
+    <form action="{%url 'create_task'%}" method="post">
+        {%csrf_token%}
+        <label for="title">Title</label>
+        <input type="text" id="title" name="title"><br><br>
+        <label for="desc">Description</label>
+        <textarea name="desc" id="desc" rows="10" cols="50"></textarea><br><br>
+        <label for="date">Deadline / YYYY-MM-DD</label>
+        <input type="datetime" id = "date" name="date"><br><br>
+        <input type="submit" value="Create">
+    </form><br><br>
+
+</body>
+</html>

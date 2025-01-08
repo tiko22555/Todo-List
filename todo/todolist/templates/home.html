@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <h1><a href="{%url 'get_tasks'%}" class="button">Today's Tasks</a><br><br>
+        <a href="{%url 'completed_tasks'%}" class="button">Completed Tasks</a><br><br>
+        <a href="{%url 'unfinished_tasks'%}" class="button">Unfinished Tasks</a><br><br>
+        <a href="{%url 'create_task'%}" class="button">Create Task</a>
+    </h1>
+</body>
+</html>

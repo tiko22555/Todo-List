@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <a href="{%url 'home' %}"class="button"> Home</a>
+    <h1>Today's Tasks</h1>
+        {%for task in tasks%}
+            <h2>
+                <a href="{%url 'get_tasks' task.id%}"> {{task.title}} - {{task.deadline}} &#10060;</a>
+                <a href="{%url 'is_done' task.id%}" class="button">&#9989;Done</a>
+
+            </h2>
+        {%endfor%}
+    </ul>
+</body>
+</html>
